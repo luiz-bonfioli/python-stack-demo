@@ -40,6 +40,7 @@ docker-compose up -d
 ### Running API
 ```bash
 python --file api_handler.py
+```
 
 ### Running Kafka Handler
 
