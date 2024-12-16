@@ -23,25 +23,29 @@ You can install Poetry using the following command:
 
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
+```
 
 ### Install Dependencies
 
 ```bash
 poetry install
+```
 
 ### Install infra (kafka)
 
 ```bash
 docker-compose up -d
-
+```
 
 ### Running API
 ```bash
 python --file api_handler.py
 
 ### Running Kafka Handler
+
 ```bash
 python --file kafka_handler.py 
+```
 
 ### Sending sensor data
 
@@ -52,6 +56,7 @@ curl --location 'http://localhost:8080/v1/sensors/c0d14d33-689c-4490-975a-6ae712
 --data '{
     "data": 123.577
 }'
+```
 
 ### Getting alerts
 
@@ -59,3 +64,4 @@ curl --location 'http://localhost:8080/v1/sensors/c0d14d33-689c-4490-975a-6ae712
 curl --location 'http://localhost:8080/v1/alerts/c0d14d33-689c-4490-975a-6ae7128f54a9' \
 --header 'x-user-id: luiz' \
 --data ''
+```
