@@ -22,6 +22,3 @@ class ObjectProxy:
         self.__generate_object()
         return getattr(self.object, name)
 
-    def get_proxy_object(self):
-        self.__generate_object()
-        return self.object
