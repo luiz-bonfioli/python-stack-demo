@@ -8,6 +8,15 @@ logger = get_logger(__name__)
 
 
 class KafkaConsumer:
+    """
+    KafkaConsumer is a class that simplifies consuming messages from a Kafka topic
+    in a consumer group. It continuously polls for new messages and invokes the
+    provided callback functions for successful message consumption and error handling.
+
+    The consumer handles message polling in an infinite loop, allowing for seamless
+    real-time message processing. It also gracefully handles shutdown by closing
+    the Kafka consumer and committing final offsets.
+    """
 
     def __init__(self, topic: str, group_id: str, config: dict, on_message=None, on_error=None):
         consumer = self.setup(config, group_id, topic)

@@ -2,6 +2,13 @@ from src.core.context.object_proxy import ObjectProxy
 
 
 class Context:
+    """
+    Context class is responsible for managing and providing access to application services
+    and repositories by acting as a centralized service locator. It ensures that instances
+    of services and repositories are created only when needed, using lazy instantiation
+    through the use of an ObjectProxy.
+    """
+
     __instances = {}
 
     def get_alert_service(self):

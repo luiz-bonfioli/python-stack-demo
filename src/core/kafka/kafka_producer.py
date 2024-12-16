@@ -9,6 +9,16 @@ logger = get_logger(__name__)
 
 
 class KafkaProducer:
+    """
+    KafkaProducer is a class that facilitates publishing messages to a Kafka topic.
+    It interacts with the Kafka producer client to send messages, handle delivery results,
+    and log the outcome of each message publishing attempt.
+
+    This class is responsible for:
+    - Publishing individual messages with a key and message body.
+    - Handling the delivery callback to process success and failure events.
+    - Flushing all pending messages to ensure they are delivered to the Kafka broker.
+    """
 
     def __init__(self, kafka_producer: Producer, topic: str):
         self.producer = kafka_producer
