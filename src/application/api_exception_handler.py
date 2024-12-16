@@ -12,6 +12,15 @@ logger = get_logger(__name__)
 
 
 class ExceptionHandler(BaseHTTPMiddleware):
+    """
+    Middleware that handles uncaught exceptions during the request processing.
+
+    This middleware is placed in the application stack to catch any unhandled exceptions
+    that occur during the processing of a request. When an exception is raised, it is caught
+    and passed to a specific exception handler that logs the error and returns a JSON response
+    with an appropriate HTTP status code and error message.
+    """
+
     async def dispatch(self, request: Request, call_next: Callable):
         try:
             return await call_next(request)
