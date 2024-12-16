@@ -22,6 +22,10 @@ class ExceptionHandler(BaseHTTPMiddleware):
 def exception_handler(request: Request, exception: Exception):
     logger.info("Error during request for: %s.", request.get('route'))
 
+    # Here you can handle more specific exceptions. Example:
+    # if isinstance(exception, ApiException):
+    #    return __api_error_handler(request, exception) 
+
     return __unknown_error_handler(request, exception)
 
 
