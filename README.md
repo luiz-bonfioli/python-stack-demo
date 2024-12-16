@@ -1,6 +1,6 @@
 # Sensor data alerts system
 
-This is a small example of using kafka to persist incoming messages from a sensor through api requests.
+This is a small example of using kafka to persist and process incoming messages from a sensor through api requests.
 
 ## Features
 
