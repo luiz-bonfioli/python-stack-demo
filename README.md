@@ -33,3 +33,29 @@ poetry install
 
 ```bash
 docker-compose up -d
+
+
+### Running API
+```bash
+python --file api_handler.py
+
+### Running Kafka Handler
+```bash
+python --file kafka_handler.py 
+
+### Sending sensor data
+
+```bash
+curl --location 'http://localhost:8080/v1/sensors/c0d14d33-689c-4490-975a-6ae7128f54a9' \
+--header 'x-user-id: luiz.bonfioli' \
+--header 'Content-Type: application/json' \
+--data '{
+    "data": 123.577
+}'
+
+### Getting alerts
+
+```bash
+curl --location 'http://localhost:8080/v1/alerts/c0d14d33-689c-4490-975a-6ae7128f54a9' \
+--header 'x-user-id: luiz' \
+--data ''
